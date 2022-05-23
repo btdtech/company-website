@@ -23,10 +23,20 @@ module.exports = {
     'next.config.js',
     '/.next/**/*',
     '**/next-env.d.ts',
+    '/out/**',
   ],
   plugins: ['@typescript-eslint', 'import'],
   rules: {
     'import/no-unresolved': 0,
     'indent': ['error', 2],
+    'require-jsdoc': ['error', {
+      'require': {
+        'FunctionDeclaration': true,
+        'MethodDefinition': false,
+        'ClassDeclaration': false,
+        'ArrowFunctionExpression': false,
+        'FunctionExpression': false,
+      },
+    }],
   },
 };
