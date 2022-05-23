@@ -1,23 +1,13 @@
 import * as functions from 'firebase-functions';
-
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-
-interface MONGODB_SECRETS {
-  PASSWORD: string;
-}
-
-export const helloWorld = functions
-  .runWith({secrets: ['MONGODB_SECRETS']})
-  .https.onRequest((request, response) => {
-    functions.logger.info('Hello logs!', {structuredData: true});
-
-    let mongoDbSecrets = {} as MONGODB_SECRETS;
-
-    if (process.env.MONGODB_SECRETS) {
-      mongoDbSecrets = JSON.parse(process.env.MONGODB_SECRETS);
-    }
-
-    response.send(`Hello ${mongoDbSecrets.PASSWORD}`);
-  });
+import next from 'next';
+const app = next({dev: false, conf: {distDir: '.next'}});
+const handler = app.getRequestHandler();
+export const server = functions.https.onRequest(async (request, response) => {
+  try {
+    await app.prepare();
+    return handler(request, response);
+  } catch (error) {
+    functions.logger.error('Cannot load server');
+    response.send('Website currently unavailable.');
+  }
+});

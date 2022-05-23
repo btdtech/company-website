@@ -19,7 +19,10 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   ignorePatterns: [
-    '/lib/**/*', // Ignore built files.
+    '/dist/**/*', // Ignore built files.
+    'next.config.js',
+    '/.next/**/*',
+    '**/next-env.d.ts',
   ],
   plugins: ['@typescript-eslint', 'import'],
   rules: {
