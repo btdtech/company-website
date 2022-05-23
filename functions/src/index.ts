@@ -4,6 +4,10 @@ const app = next({dev: false, conf: {distDir: '.next'}});
 const handler = app.getRequestHandler();
 export const server = functions.https.onRequest(async (request, response) => {
   try {
+    if (request.url === '') {
+      request.url = '/';
+    }
+
     await app.prepare();
     return handler(request, response);
   } catch (error) {

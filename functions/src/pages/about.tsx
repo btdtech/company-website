@@ -1,9 +1,14 @@
+import {Button, Container, Typography} from '@mui/material';
+
 const AboutPage = () => {
   return (
-    <div>
-      <h1>About</h1>
-      <p>We are a business.</p>
-    </div>
+    <Container maxWidth="md">
+      <Typography variant="h1">About</Typography>
+      <Typography>We are a business.</Typography>
+      <Button variant="contained" color="secondary">
+        Hello
+      </Button>
+    </Container>
   );
 };
 

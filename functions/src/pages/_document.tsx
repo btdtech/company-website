@@ -1,4 +1,4 @@
-import * as React from 'react';
+// https://dev.to/hajhosein/nextjs-mui-v5-tutorial-2k35
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import {theme, createEmotionCache} from '../theme';

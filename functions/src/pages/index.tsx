@@ -1,20 +1,25 @@
+import {Button, Container, Typography} from '@mui/material';
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-      <p>
+    <Container maxWidth="md">
+      <Typography variant="h1">Hello World</Typography>
+      <Button variant="contained" color="primary">
+        Click Me
+      </Button>
+      <Typography>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam adipisci
         iure accusamus, neque aut suscipit quis iste nostrum molestiae tenetur
         repellendus, obcaecati, voluptatum dolor odit cumque molestias culpa ea
         quos.
-      </p>
-      <p>
+      </Typography>
+      <Typography>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam adipisci
         iure accusamus, neque aut suscipit quis iste nostrum molestiae tenetur
         repellendus, obcaecati, voluptatum dolor odit cumque molestias culpa ea
         quos.
-      </p>
-    </div>
+      </Typography>
+    </Container>
   );
 };
 
