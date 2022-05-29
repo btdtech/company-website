@@ -24,8 +24,8 @@ export default function RootApp({
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
+        <Link href="./">Home</Link>
+        <Link href="./about">About</Link>
         <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>

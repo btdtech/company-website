@@ -1,12 +1,12 @@
-import {createTheme} from '@mui/material';
 import createCache from '@emotion/cache';
+import {createTheme} from '@mui/material/styles';
 
 // prepend: true moves MUI styles to the
 // top of the <head> so they're loaded first.
 // It allows developers to easily override MUI
 // styles with other styling solutions, like CSS modules.
 export const createEmotionCache = () => {
-  return createCache({key: 'btd-css', prepend: true});
+  return createCache({key: 'btd-tech', prepend: true});
 };
 
 export const theme = createTheme({

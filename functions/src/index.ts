@@ -7,7 +7,6 @@ export const server = functions.https.onRequest(async (request, response) => {
     if (request.url === '') {
       request.url = '/';
     }
-
     await app.prepare();
     return handler(request, response);
   } catch (error) {
