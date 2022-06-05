@@ -68,3 +68,4 @@ node_modules/
 **/dist
 **/.next
 **/out
+nextjs
