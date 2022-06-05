@@ -4,7 +4,11 @@ const HomePage = () => {
   return (
     <Container maxWidth="md">
       <Typography variant="h1">Hello World</Typography>
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => console.log('Hello')}
+      >
         Click Me
       </Button>
       <Typography>

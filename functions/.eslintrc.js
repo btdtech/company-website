@@ -22,6 +22,7 @@ module.exports = {
     '/dist/**/*', // Ignore built files.
     'next.config.js',
     '/.next/**/*',
+    '/nextjs/**/*',
     '**/next-env.d.ts',
     '/out/**',
   ],
