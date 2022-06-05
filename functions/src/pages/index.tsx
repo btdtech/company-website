@@ -1,14 +1,21 @@
 import {Button, Container, Typography} from '@mui/material';
+import {Modal} from '@btd-tech/ui-lib';
+import {useState} from 'react';
 
 const HomePage = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <Container maxWidth="md">
-      <Typography variant="h1">Hello World</Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => console.log('Hello')}
-      >
+      <Button variant="contained" color="primary" onClick={openModal}>
         Click Me
       </Button>
       <Typography>
@@ -23,6 +30,18 @@ const HomePage = () => {
         repellendus, obcaecati, voluptatum dolor odit cumque molestias culpa ea
         quos.
       </Typography>
+      <Modal
+        open={showModal}
+        title="Modal"
+        onClose={closeModal}
+        onCancel={closeModal}
+        onConfirm={closeModal}
+        onDiscard={closeModal}
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat iusto
+        magni provident culpa in, dolor enim saepe accusantium rem ullam earum
+        ea quibusdam maxime ut exercitationem officia sunt vero perspiciatis!
+      </Modal>
     </Container>
   );
 };
